@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countdown Timer</title>
+<link rel="stylesheet" href="style.css">
+<script src="irene.js"></script>
+<style>
+  #timer{
+    text-align: right;
+    font-size: 45px;
+    position: absolute;
+    left: 70%;
+    bottom: 70%;
+    background-color: rgb(31, 193, 104);
+    padding: 10px;
+    border-radius: 5px;
+  }
+</style>
+</head>
+<body>
+  <div class="main">
+    <div class="navbar">
+      <div class="icon">
+        <h2 class="logo">N.B.A</h2>
+      </div>
+    </div>
+  </div>
+  <div class="menu">
+    <nav>
+      <a href="">HOME</a>
+      <a href="">ABOUT</a>
+      <a href="">SERVICE</a>
+      <a href="">CONTACT</a>
+      <a href="">BRANDS</a>
+    </nav>
+  </div>
+  <div class="content">
+    <h1>Ja morant's limited edition</h1>
+    <h2>This is the EXCLUSIVE pair of the ja morant Jordan <br> 1's high tops. They originally cost $300000 dollars but NBA <br> and Nike have collaborated  to give out 5 free pairs to 5 lucky customers. <br> To register click the button below and purchase any pair of Ja morant's<br> 4's and stand  a chance of winning a signed pair of cactus Jacks. <br>Registration ends this friday.</h2>
+    <div class="maint">
+      <a href=""> <B>REGISTER HERE</B></a>
+    </div>
+    <div class="img">
+      <figure>
+        <img class="juice" src="morant-nike-shoe.jpg" alt="morant shoe">
+        <img class="joe" src="MqPmav5.jpg" alt="morants">
+      </figure>
+    </div>
+  </div>
+  <div id="timer"></div>
+  <script>
+    // Set the date we're counting down to
+    var countDownDate = new Date("Mar 10, 2024 00:00:00").getTime();
+  
+    // Update the countdown every 1 second
+    var x = setInterval(function() {
+      // Get the current date and time
+      var now = new Date().getTime();
+  
+      // Calculate the remaining time
+      var distance = countDownDate - now;
+  
+      // Calculate days ,hours, minutes, and seconds
+      var days = Math. floor(distance/ (1000 * 60 * 60 * 24))
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  
+      // Display the countdown
+      document.getElementById("timer").innerHTML = days + "d" + ":" + hours + "h" + ":" + minutes + "m" + ":" + seconds + "s" ;
+  
+      // If the countdown is over, display a message
+      if (distance < 0) {
+        clearInterval(x);
+        document.getElementById("timer").innerHTML = "EXPIRED";
+      }
+    }, 1000);
+  </script>
+  
+  
+</body>
+</html>
